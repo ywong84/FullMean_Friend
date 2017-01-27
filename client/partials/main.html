@@ -1,0 +1,37 @@
+<h1>Welcome</h1>
+<div>
+  <input type="text" ng-model="filter" placeholder="filter by Birthday"/>
+  <table class="table table-bordered">
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Show
+      </th>
+      <th>
+        Update
+      </th>
+      <th>
+        Delete
+      </th>
+    </tr>
+
+    <tr ng-repeat="friend in friends | filter: filter track by $index" >
+      <td>
+        {{friend.first_name}} {{friend.last_name}}
+      </td>
+
+      <td>
+        <h4><a href="#!/show/{{friend._id}}">show</a></h4>
+      </td>
+      <td>
+        <h4><a href="#!/edit/{{friend._id}}">edit</a></h4>
+      </td>
+      <td>
+        <button ng-click="delete(friend._id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+  <h4><a href="#!/new">New Friend</a></h4>
+</div>

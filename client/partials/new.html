@@ -1,0 +1,17 @@
+<div ng-repeat="error in errors" ng-if="errors!={}">
+  {{error.message}}
+</div>
+<form ng-submit="create()">
+  <label>
+    <input type="text" ng-model="friend.first_name"/>First Name
+  </label>
+  <label>
+    <input type="text" ng-model="friend.last_name"/>Last Name
+  </label>
+  <label>
+    <input type="date" ng-model="friend.birthday"/>Birthday
+  </label>
+  <label>
+    <input type="submit" value="Create" />
+  </label>
+</form>
